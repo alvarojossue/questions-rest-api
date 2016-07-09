@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require("express");
-var route = express.Router();
+var router = express.Router();
 
 // GET /questions
 // Route for questions collection
