@@ -2,10 +2,16 @@
 
 var express = require("express");
 var app = express();
+var routes = require("./routes");
+
 var jsonParser = require("body-parser").json
 
+app.use(jsonParser());
+
+app.use("/questions", routes);
+
 app.use(function(req, res, next){
-	console.log("The leave on the trees are", req.query.color);
+	req.body;
 	next();
 })
 
