@@ -20,7 +20,7 @@ router.post("/", function(req, res) {
 
 // GET /questions/:id
 // Route for specific questions
-router.get("/", function(req, res) {
+router.get("/:id", function(req, res) {
 	res.json({
 		response: "You sent a GET request for ID" + req.params.id
 	});
