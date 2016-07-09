@@ -11,7 +11,7 @@ router.get("/", function(req, res) {
 
 // POST /questions
 // Route for creating questions
-router.get("/", function(req, res) {
+router.post("/", function(req, res) {
 	res.json({
 		response: "You sent a POST request",
 		body: req.body
