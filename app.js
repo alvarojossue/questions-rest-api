@@ -11,6 +11,28 @@ var logger = require("morgan");
 app.use(logger("dev"));
 app.use(jsonParser());
 
+
+
+//Connection to MongoDB
+var mongoose = require("mongoose");
+
+mongoose.connect("mongodb://localhost:27017/qa");
+
+var db = mongoose.connection;
+
+db.on("error", function(err){
+	console.error("connection error:", err);
+});
+
+db.once("open", function(){
+	console.log("db connection successful");
+
+});
+
+
+// API Routes by calling the routes variable which is storing the routes.js document
+
+
 app.use("/questions", routes);
 
 // catch 404 and forward to error handler
